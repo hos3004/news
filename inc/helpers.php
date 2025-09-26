@@ -11,5 +11,3 @@ function nt_css_vars_inline(){
     echo '<style id="nt-vars">.nt-ticker{'.$vars.'}</style>';
 }
 add_action('wp_head', 'nt_css_vars_inline');
-
-register_activation_hook(__FILE__ , function(){ nt_get_options(); });

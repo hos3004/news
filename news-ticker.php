@@ -21,6 +21,12 @@ require_once NT_PATH . 'inc/class-settings.php';
 require_once NT_PATH . 'inc/class-rest.php';
 require_once NT_PATH . 'inc/class-vc.php'; // WPBakery
 
+register_activation_hook(__FILE__, 'nt_activate_plugin');
+
+function nt_activate_plugin(){
+    nt_get_options();
+}
+
 add_action('plugins_loaded', function () {
     load_plugin_textdomain('news-ticker', false, dirname(plugin_basename(__FILE__)).'/languages');
 });
