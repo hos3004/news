@@ -78,8 +78,8 @@
     function next(){ idx=(idx+1)%items.length; show(); }
     function prev(){ idx=(idx-1+items.length)%items.length; show(); }
 
-    container.querySelector('.nt-next') && container.querySelector('.nt-next').addEventListener('click', prev);
-    container.querySelector('.nt-prev') && container.querySelector('.nt-prev').addEventListener('click', next);
+    container.querySelector('.nt-next') && container.querySelector('.nt-next').addEventListener('click', next);
+    container.querySelector('.nt-prev') && container.querySelector('.nt-prev').addEventListener('click', prev);
 
     // Keyboard support (left/right)
     container.addEventListener('keydown', (e)=>{
