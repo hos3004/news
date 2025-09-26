@@ -1,0 +1,24 @@
+/* Frontend styles for News Ticker */
+.nt-ticker{ display:block; overflow:hidden; background:var(--nt-bg,#f7f7f7); color:var(--nt-color,#111); }
+.nt-track{ display:flex; align-items:center; gap:.5rem; padding:.4rem .6rem; }
+.nt-prev,.nt-next{ background:none; border:0; font-size:1.1rem; cursor:pointer; color:var(--nt-arrow,#333); }
+.nt-items{ flex:1; min-width:0; }
+
+.nt-marquee{ position:relative; display:block; white-space:nowrap; }
+.nt-marquee .nt-row{ display:inline-block; padding-inline-end:2rem; }
+.nt-marquee.rtl .nt-row{ animation: nt-left var(--spd,30s) linear infinite; }
+.nt-marquee.ltr .nt-row{ animation: nt-right var(--spd,30s) linear infinite; }
+.nt-marquee.paused .nt-row{ animation-play-state: paused !important; }
+
+@keyframes nt-left{ from{ transform:translateX(0);} to{ transform:translateX(-100%);} }
+@keyframes nt-right{ from{ transform:translateX(-100%);} to{ transform:translateX(0);} }
+
+.nt-link{ display:inline-block; margin:0 .75rem; text-decoration:none; color:inherit; font-weight:600; }
+.nt-sep{ opacity:.5; margin:0 .5rem; vertical-align:middle; height:1em; }
+
+.nt-type{ display:inline-block; white-space:nowrap; }
+.nt-urgent{ display:inline-block; padding:0 .35em; margin-inline-end:.35em; border-radius:.25em; background:#d00; color:#fff; font-size:.875em; font-weight:700; }
+
+@media (prefers-reduced-motion: reduce){
+  .nt-marquee .nt-row{ animation:none !important; }
+}

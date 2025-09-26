@@ -1,0 +1,42 @@
+{
+  "apiVersion": 3,
+  "name": "nt/news-ticker",
+  "title": "News Ticker",
+  "category": "widgets",
+  "icon": "megaphone",
+  "description": "شريط أخبار متحرك (Marquee/Typewriter).",
+  "attributes": {
+    "count": {
+      "type": "number",
+      "default": 7
+    },
+    "category": {
+      "type": "string",
+      "default": ""
+    },
+    "speed": {
+      "type": "number",
+      "default": 5000
+    },
+    "direction": {
+      "type": "string",
+      "default": "rtl"
+    },
+    "mode": {
+      "type": "string",
+      "default": "marquee"
+    },
+    "sticky": {
+      "type": "string",
+      "default": "off"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./edit.js",
+  "style": "file:./style.css"
+}
